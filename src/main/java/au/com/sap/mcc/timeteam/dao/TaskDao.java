@@ -6,7 +6,7 @@ import au.com.sap.mcc.timeteam.model.Task;
 
 public interface TaskDao {
 
-	public Task fetchTaskById(Integer id);
+	public Task fetchTaskById(String id);
 	public List<Task> fetchAllTasks();
 	public Task saveTask(Task task);
 	public void deleteTask(Task task);

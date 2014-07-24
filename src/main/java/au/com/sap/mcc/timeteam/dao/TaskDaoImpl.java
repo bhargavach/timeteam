@@ -14,8 +14,8 @@ public class TaskDaoImpl implements TaskDao{
 	TaskRepository taskRepository = null;
 
 	@Override
-	public Task fetchTaskById(Integer id) {
-		Task task = taskRepository.findOne(id.toString());
+	public Task fetchTaskById(String id) {
+		Task task = taskRepository.findOne(id);
 		
 		if(task == null) {
 			throw new RuntimeException("Task Not Found: " + id);

@@ -16,10 +16,10 @@ public class TaskServiceImpl implements TaskService {
 	public TaskResponse fetchTaskById(TaskRequest request) {
 		TaskResponse response = new TaskResponse();
 		try {
-			response.setTasks(Arrays.asList(taskDao.fetchTaskById(Integer.valueOf(request.getTask().getId()))));
+			response.setTasks(Arrays.asList(taskDao.fetchTaskById(request.getTask().getId())));
 		} catch(Exception e) {
 			response.setSuccess(false);
-			response.setErrorMessage(e.getClass() + ":" + e.getCause().getMessage());
+			response.setErrorMessage(e.getClass() + ":" + e.getMessage());
 		}
 		return response;
 	}
@@ -30,7 +30,7 @@ public class TaskServiceImpl implements TaskService {
 			response.setTasks(taskDao.fetchAllTasks());
 		} catch(Exception e) {
 			response.setSuccess(false);
-			response.setErrorMessage(e.getClass() + ":" + e.getCause().getMessage());
+			response.setErrorMessage(e.getClass() + ":" + e.getMessage());
 		}
 		return response;
 	}
@@ -41,7 +41,7 @@ public class TaskServiceImpl implements TaskService {
 			response.setTasks(Arrays.asList(taskDao.saveTask(request.getTask())));
 		} catch(Exception e) {
 			response.setSuccess(false);
-			response.setErrorMessage(e.getClass() + ":" + e.getCause().getMessage());
+			response.setErrorMessage(e.getClass() + ":" + e.getMessage());
 		}
 		return response;
 	}
@@ -52,7 +52,7 @@ public class TaskServiceImpl implements TaskService {
 			taskDao.deleteTask(request.getTask());
 		} catch(Exception e) {
 			response.setSuccess(false);
-			response.setErrorMessage(e.getClass() + ":" + e.getCause().getMessage());
+			response.setErrorMessage(e.getClass() + ":" + e.getMessage());
 		}
 		return response;
 	}
