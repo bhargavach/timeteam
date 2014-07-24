@@ -1,4 +1,4 @@
-package au.com.sap.mcc.timeteam.rest.dao;
+package au.com.sap.mcc.timeteam.dao;
 
 import org.springframework.data.repository.CrudRepository;
 

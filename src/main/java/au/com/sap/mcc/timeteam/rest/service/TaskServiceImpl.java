@@ -4,14 +4,14 @@ import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import au.com.sap.mcc.timeteam.rest.dao.TaskManagerDao;
+import au.com.sap.mcc.timeteam.dao.TaskDao;
 import au.com.sap.mcc.timeteam.rest.model.TaskRequest;
 import au.com.sap.mcc.timeteam.rest.model.TaskResponse;
 
-public class TaskManagerService implements TaskManager {
+public class TaskServiceImpl implements TaskService {
 	
 	@Autowired
-	protected TaskManagerDao taskDao;
+	protected TaskDao taskDao;
 
 	public TaskResponse fetchTaskById(TaskRequest request) {
 		TaskResponse response = new TaskResponse();

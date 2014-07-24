@@ -1,4 +1,4 @@
-package au.com.sap.mcc.timeteam.rest.dao;
+package au.com.sap.mcc.timeteam.dao;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import au.com.sap.mcc.timeteam.model.Task;
 
 @Service
-public class TaskManagerJPADao implements TaskManagerDao{
+public class TaskDaoImpl implements TaskDao{
 	
 	@Autowired
 	TaskRepository taskRepository = null;

@@ -1,10 +1,10 @@
-package au.com.sap.mcc.timeteam.rest.dao;
+package au.com.sap.mcc.timeteam.dao;
 
 import java.util.List;
 
 import au.com.sap.mcc.timeteam.model.Task;
 
-public interface TaskManagerDao {
+public interface TaskDao {
 
 	public Task fetchTaskById(Integer id);
 	public List<Task> fetchAllTasks();

@@ -47,6 +47,7 @@
 		<org.springframework-version>4.0.6.RELEASE</org.springframework-version>
 		<org.springframework.data-version>1.6.1.RELEASE</org.springframework.data-version>
 		<org.apache.cxf.version>2.6.1</org.apache.cxf.version>
+		<jetty.plugin.version>9.2.1.v20140609</jetty.plugin.version>
 	</properties>
 
 	<repositories>
@@ -128,10 +129,11 @@
 			<artifactId>validation-api</artifactId>
 			<version>1.1.0.Final</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>5.1.1.Final</version>
+			<version>4.3.0.Final</version>
 		</dependency>
 
 		<!-- Spring -->
@@ -166,30 +168,37 @@
 			<artifactId>spring-data-jpa</artifactId>
 			<version>${org.springframework.data-version}</version>
 		</dependency>
-		
-				<!-- Apache CXF -->
+
+		<!-- Apache CXF -->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-frontend-jaxws</artifactId>
 			<version>${org.apache.cxf.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-transports-http</artifactId>
 			<version>${org.apache.cxf.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-rs-extension-providers</artifactId>
 			<version>${org.apache.cxf.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-bundle-jaxrs</artifactId>
 			<version>${org.apache.cxf.version}</version>
+		</dependency>
+
+		<!-- Jackson JSON -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-jaxrs</artifactId>
+			<version>1.9.13</version>
 		</dependency>
 
 	</dependencies>
@@ -205,6 +214,11 @@
 					<showDeprecation>true</showDeprecation>
 					<showWarnings>true</showWarnings>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${jetty.plugin.version}</version>
 			</plugin>
 		</plugins>
 	</build>

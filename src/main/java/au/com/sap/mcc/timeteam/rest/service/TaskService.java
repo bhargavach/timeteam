@@ -11,14 +11,14 @@ import au.com.sap.mcc.timeteam.rest.model.TaskResponse;
 
 @Consumes("application/json")
 @Produces("application/json")
-public interface TaskManager {
+public interface TaskService {
 
 	@POST
 	@Path("/fetchTaskById/")
 	public TaskResponse fetchTaskById(TaskRequest request);
 	
 	@POST
-	@Path("/fatchAllTasks")
+	@Path("/fetchAllTasks")
 	public TaskResponse fetchAllTasks(TaskRequest request);
 	
 	@POST
