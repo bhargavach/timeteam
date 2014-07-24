@@ -42,10 +42,13 @@
 
 	<properties>
 		<jdk.version>1.6</jdk.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>		
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<sap.hcp.sdk.version>2.3.3</sap.hcp.sdk.version>
+		<org.springframework-version>4.0.6.RELEASE</org.springframework-version>
+		<org.springframework.data-version>1.6.1.RELEASE</org.springframework.data-version>
+		<org.apache.cxf.version>2.6.1</org.apache.cxf.version>
 	</properties>
-	
+
 	<repositories>
 		<repository>
 			<id>central</id>
@@ -85,21 +88,110 @@
 			<version>1.6.1</version>
 			<scope>provided</scope>
 		</dependency>
-	
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
-		
-		<!-- SAP HANA Cloud Platform  -->
-        	<dependency>
-	        	<groupId>com.sap.cloud</groupId>
+
+		<!-- SAP HANA Cloud Platform -->
+		<dependency>
+			<groupId>com.sap.cloud</groupId>
 			<artifactId>neo-java-web-api</artifactId>
 			<version>${sap.hcp.sdk.version}</version>
-        	</dependency>
-			
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.1</version>
+		</dependency>
+
+		<!-- JPA & EclipseLink -->
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>eclipselink</artifactId>
+			<version>2.5.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>javax.persistence</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+
+		<!-- Validation -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.1.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.1.1.Final</version>
+		</dependency>
+
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework-version}</version>
+			<exclusions>
+				<!-- Exclude Commons Logging in favor of SLF4j -->
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${org.springframework-version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>${org.springframework.data-version}</version>
+		</dependency>
+		
+				<!-- Apache CXF -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${org.apache.cxf.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${org.apache.cxf.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-extension-providers</artifactId>
+			<version>${org.apache.cxf.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-bundle-jaxrs</artifactId>
+			<version>${org.apache.cxf.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

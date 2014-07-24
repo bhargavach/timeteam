@@ -6,6 +6,9 @@
 
     <persistence-unit name="timeteam" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>au.com.sap.mcc.timeteam.model.BaseEntity</class>
+        <class>au.com.sap.mcc.timeteam.model.Task</class>
+        <class>au.com.sap.mcc.timeteam.model.User</class>
   	  	
   	  	<exclude-unlisted-classes>true</exclude-unlisted-classes>
   	  	<properties>
