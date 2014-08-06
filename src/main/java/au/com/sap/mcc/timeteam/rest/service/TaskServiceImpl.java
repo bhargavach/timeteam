@@ -13,10 +13,10 @@ public class TaskServiceImpl implements TaskService {
 	@Autowired
 	protected TaskDao taskDao;
 
-	public TaskResponse fetchTaskById(TaskRequest request) {
+	public TaskResponse getTask(String id) {
 		TaskResponse response = new TaskResponse();
 		try {
-			response.setTasks(Arrays.asList(taskDao.fetchTaskById(request.getTask().getId())));
+			response.setTasks(Arrays.asList(taskDao.fetchTaskById(id)));
 		} catch(Exception e) {
 			response.setSuccess(false);
 			response.setErrorMessage(e.getClass() + ":" + e.getMessage());
@@ -24,7 +24,7 @@ public class TaskServiceImpl implements TaskService {
 		return response;
 	}
 
-	public TaskResponse fetchAllTasks(TaskRequest request) {
+	public TaskResponse listAll() {
 		TaskResponse response = new TaskResponse();
 		try {
 			response.setTasks(taskDao.fetchAllTasks());

@@ -11,11 +11,22 @@
 	</entity>
 
 	<entity>
-		<entity-name>org.persistence.Entity1</entity-name>
+		<entity-name>au.com.sap.mcc.timeteam.model.User</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>70</entity-height>
-		<entity-X-Coordinate>630</entity-X-Coordinate>
-		<entity-Y-Coordinate>110</entity-Y-Coordinate>
+		<entity-X-Coordinate>160</entity-X-Coordinate>
+		<entity-Y-Coordinate>440</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>au.com.sap.mcc.timeteam.model.Task</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>70</entity-height>
+		<entity-X-Coordinate>520</entity-X-Coordinate>
+		<entity-Y-Coordinate>440</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>

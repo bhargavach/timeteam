@@ -1,8 +1,11 @@
 package au.com.sap.mcc.timeteam.rest.service;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import au.com.sap.mcc.timeteam.rest.model.TaskRequest;
@@ -13,19 +16,19 @@ import au.com.sap.mcc.timeteam.rest.model.TaskResponse;
 @Produces("application/json")
 public interface TaskService {
 
-	@POST
-	@Path("/fetchTaskById/")
-	public TaskResponse fetchTaskById(TaskRequest request);
+	@GET
+	@Path("/get/{taskId}/")
+	public TaskResponse getTask(@PathParam(value = "taskId") String id);
+	
+	@GET
+	@Path("/list")
+	public TaskResponse listAll();
 	
 	@POST
-	@Path("/fetchAllTasks")
-	public TaskResponse fetchAllTasks(TaskRequest request);
-	
-	@POST
-	@Path("/saveTask")
+	@Path("/save")
 	public TaskResponse saveTask(TaskRequest request);
 	
-	@POST
-	@Path("/deleteTask")
+	@DELETE
+	@Path("/delete")
 	public TaskResponse deleteTask(TaskRequest request);
 }

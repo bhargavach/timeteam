@@ -12,10 +12,10 @@
 	
 	<!-- Application Loggers -->
 	<logger name="com.osintegrators.example">
-		<level value="all" />
+		<level value="info" />
 	</logger>
 	
-	<logger name="com.sap.hana.cloud.samples.granny">
+	<logger name="au.com.sap.mcc.timeteam">
 		<level value="all" />
 	</logger>
 	
