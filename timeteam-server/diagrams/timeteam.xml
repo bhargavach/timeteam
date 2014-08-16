@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><entities>
+	<entity>
+		<entity-name>au.com.sap.mcc.timeteam.model.Task</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>148</entity-height>
+		<entity-X-Coordinate>340</entity-X-Coordinate>
+		<entity-Y-Coordinate>293</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>au.com.sap.mcc.timeteam.model.User</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>70</entity-height>
+		<entity-X-Coordinate>87</entity-X-Coordinate>
+		<entity-Y-Coordinate>80</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>au.com.sap.mcc.timeteam.model.BaseEntity</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>188</entity-height>
+		<entity-X-Coordinate>340</entity-X-Coordinate>
+		<entity-Y-Coordinate>70</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>au.com.sap.mcc.timeteam.model.Activity</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>128</entity-height>
+		<entity-X-Coordinate>560</entity-X-Coordinate>
+		<entity-Y-Coordinate>308</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>au.com.sap.mcc.timeteam.model.Project</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>128</entity-height>
+		<entity-X-Coordinate>87</entity-X-Coordinate>
+		<entity-Y-Coordinate>303</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+</entities>
