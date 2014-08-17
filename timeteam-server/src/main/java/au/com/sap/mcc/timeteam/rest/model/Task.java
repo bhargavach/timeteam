@@ -62,7 +62,7 @@ public class Task {
 	public void setActivities(List<Activity> activities) {
 		this.activities = activities;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -74,26 +74,28 @@ public class Task {
 	@JsonIgnore
 	public static final Task convert(au.com.sap.mcc.timeteam.model.Task jpaTask) {
 		Task task = new Task();
-		
+
 		task.setId(jpaTask.getId());
 		task.setNumber(jpaTask.getNumber());
 		task.setVersion(jpaTask.getVersion());
 		task.setName(jpaTask.getName());
-		
-		if(jpaTask.getProject() != null) {
+
+		if (jpaTask.getProject() != null) {
 			task.setProjectId(jpaTask.getProject().getId());
 			task.setShortname(jpaTask.getShortName());
 		}
-		
+
 		List<Activity> activities = new ArrayList<Activity>();
-		
-		for(au.com.sap.mcc.timeteam.model.Activity jpaActivity : jpaTask.getActivities()) {
-			Activity activity = Activity.convert(jpaActivity);
-			activities.add(activity);
+
+		if (activities != null) {
+			for (au.com.sap.mcc.timeteam.model.Activity jpaActivity : jpaTask.getActivities()) {
+				Activity activity = Activity.convert(jpaActivity);
+				activities.add(activity);
+			}
 		}
-		
+
 		task.setActivities(activities);
-		
+
 		return task;
 	}
 

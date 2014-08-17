@@ -25,19 +25,20 @@ public class TaskServiceImpl implements TaskService {
 	@Autowired
 	protected ProjectDao projectDao;
 	
-	public TaskResponse getTask(String id) {
+	public TaskResponse get(String id) {
 		TaskResponse response = new TaskResponse();
 		try {
 			au.com.sap.mcc.timeteam.model.Task jpaTask = taskDao.fetchById(id);
 			response.setTasks(Arrays.asList(Task.convert(jpaTask)));
 		} catch(Exception e) {
+			log.error("getTask", e);
 			response.setSuccess(false);
 			response.setErrorMessage(e.getClass() + ":" + e.getMessage());
 		}
 		return response;
 	}
 
-	public TaskResponse listAll() {
+	public TaskResponse list() {
 		TaskResponse response = new TaskResponse();
 		try {
 			List<Task> tasks = new ArrayList<Task>();
@@ -48,13 +49,14 @@ public class TaskServiceImpl implements TaskService {
 			}
 			response.setTasks(tasks);
 		} catch(Exception e) {
+			log.error("listAll", e);
 			response.setSuccess(false);
 			response.setErrorMessage(e.getClass() + ":" + e.getMessage());
 		}
 		return response;
 	}
 
-	public TaskResponse createTask(TaskRequest request) {
+	public TaskResponse create(TaskRequest request) {
 		TaskResponse response = new TaskResponse();
 		try {
 			Project jpaProject = projectDao.fetchById(request.getTask().getProjectId());
@@ -69,6 +71,7 @@ public class TaskServiceImpl implements TaskService {
 			Task task = Task.convert(jpaTask);
 			response.setTasks(Arrays.asList(task));
 		} catch(Exception e) {
+			log.error("createTask", e);
 			response.setSuccess(false);
 			response.setErrorMessage(e.getClass() + ":" + e.getMessage());
 		}
@@ -76,7 +79,7 @@ public class TaskServiceImpl implements TaskService {
 	}
 	
 	@Override
-	public TaskResponse updateTask(TaskRequest request) {
+	public TaskResponse update(TaskRequest request) {
 		TaskResponse response = new TaskResponse();
 		try {
 			au.com.sap.mcc.timeteam.model.Task jpaTask = taskDao.fetchById(request.getTask().getId());			
@@ -84,18 +87,20 @@ public class TaskServiceImpl implements TaskService {
 			Task task = Task.convert(taskDao.save(jpaTask));
 			response.setTasks(Arrays.asList(task));
 		} catch(Exception e) {
+			log.error("updateTask", e);
 			response.setSuccess(false);
 			response.setErrorMessage(e.getClass() + ":" + e.getMessage());
 		}
 		return response;
 	}
 
-	public TaskResponse deleteTask(TaskRequest request) {
+	public TaskResponse delete(TaskRequest request) {
 		TaskResponse response = new TaskResponse();
 		try {
 			au.com.sap.mcc.timeteam.model.Task jpaTask = taskDao.fetchById(request.getTask().getId());
 			taskDao.delete(jpaTask);
 		} catch(Exception e) {
+			log.error("deleteTask", e);
 			response.setSuccess(false);
 			response.setErrorMessage(e.getClass() + ":" + e.getMessage());
 		}

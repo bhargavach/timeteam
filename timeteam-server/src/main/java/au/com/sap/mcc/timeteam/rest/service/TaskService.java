@@ -19,21 +19,21 @@ public interface TaskService {
 
 	@GET
 	@Path("/get/{taskId}/")
-	public TaskResponse getTask(@PathParam(value = "taskId") String id);
+	public TaskResponse get(@PathParam(value = "taskId") String id);
 	
 	@GET
 	@Path("/list")
-	public TaskResponse listAll();
+	public TaskResponse list();
 	
 	@POST
 	@Path("/create")
-	public TaskResponse createTask(TaskRequest request);
+	public TaskResponse create(TaskRequest request);
 	
 	@PUT
 	@Path("/update")
-	public TaskResponse updateTask(TaskRequest request);
+	public TaskResponse update(TaskRequest request);
 	
 	@DELETE
 	@Path("/delete")
-	public TaskResponse deleteTask(TaskRequest request);
+	public TaskResponse delete(TaskRequest request);
 }

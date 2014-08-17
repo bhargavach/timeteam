@@ -10,7 +10,9 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
-	<context:component-scan base-package="au.com.sap.mcc.timeteam.model, au.com.sap.mcc.timeteam.dao, au.com.sap.mcc.timeteam.rest.model, au.com.sap.mcc.timeteam.rest.service, au.com.sap.mcc.timeteam.aop" />
+	<context:component-scan base-package="au.com.sap.mcc.timeteam.aop" />
 
 	<aop:aspectj-autoproxy proxy-target-class="true"/>
+	
+	<import resource="classpath:/datasource-context.xml"/>
 </beans>

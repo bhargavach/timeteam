@@ -2,7 +2,6 @@ package au.com.sap.mcc.timeteam.model;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -17,7 +16,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 @Table(name = "ACTIVITY")
 public class Activity extends BaseEntity {
 
-	@ManyToOne(cascade = CascadeType.REFRESH)
+	@ManyToOne
 	@JoinColumn(name = "TASK_ID", nullable = false, updatable = false)
 	protected Task task;
 	

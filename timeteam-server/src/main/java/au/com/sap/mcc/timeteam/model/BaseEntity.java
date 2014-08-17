@@ -19,7 +19,7 @@ import org.eclipse.persistence.annotations.OptimisticLocking;
 import org.eclipse.persistence.annotations.OptimisticLockingType;
 
 @MappedSuperclass
-@OptimisticLocking(type=OptimisticLockingType.VERSION_COLUMN, cascade = true) 
+@OptimisticLocking(type=OptimisticLockingType.VERSION_COLUMN) 
 public abstract class BaseEntity {
 	@Id
     @Column(name="ID", length = 36)

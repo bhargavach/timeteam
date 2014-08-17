@@ -21,12 +21,14 @@ public class ProjectServiceImpl implements ProjectService {
 	ProjectDao projectDao;
 	
 	@Override
-	public ProjectResponse getProject(String id) {
+	public ProjectResponse get(String id) {
+		log.debug(">> get("+ id+ ")");
 		ProjectResponse response = new ProjectResponse();
 		try {
 			au.com.sap.mcc.timeteam.model.Project jpaProject = projectDao.fetchById(id);
 			response.setProjects(Arrays.asList(Project.convert(jpaProject)));
 		} catch(Exception e) {
+			log.error("getProject",e);
 			response.setSuccess(false);
 			response.setErrorMessage(e.getClass() + ":" + e.getMessage());
 		}
@@ -34,7 +36,7 @@ public class ProjectServiceImpl implements ProjectService {
 	}
 
 	@Override
-	public ProjectResponse listAll() {
+	public ProjectResponse list() {
 		ProjectResponse response = new ProjectResponse();
 		try {
 			List<au.com.sap.mcc.timeteam.model.Project> jpaProjects = projectDao.findAll();
@@ -48,6 +50,7 @@ public class ProjectServiceImpl implements ProjectService {
 			response.setProjects(projects);
 			
 		} catch(Exception e) {
+			log.error("listAll", e);
 			response.setSuccess(false);
 			response.setErrorMessage(e.getClass() + ":" + e.getMessage());
 		}
@@ -55,7 +58,7 @@ public class ProjectServiceImpl implements ProjectService {
 	}
 
 	@Override
-	public ProjectResponse createTask(ProjectRequest request) {
+	public ProjectResponse create(ProjectRequest request) {
 		ProjectResponse response = new ProjectResponse();
 		try {
 			au.com.sap.mcc.timeteam.model.Project jpaProject = new au.com.sap.mcc.timeteam.model.Project();
@@ -67,6 +70,7 @@ public class ProjectServiceImpl implements ProjectService {
 			
 			response.setProjects(Arrays.asList(project));
 		} catch(Exception e) {
+			log.error("listAll", e);
 			response.setSuccess(false);
 			response.setErrorMessage(e.getClass() + ":" + e.getMessage());
 		}
@@ -74,7 +78,7 @@ public class ProjectServiceImpl implements ProjectService {
 	}
 	
 	@Override
-	public ProjectResponse updateTask(ProjectRequest request) {
+	public ProjectResponse update(ProjectRequest request) {
 		ProjectResponse response = new ProjectResponse();
 		try {
 			au.com.sap.mcc.timeteam.model.Project jpaProject = projectDao.fetchById(request.getProject().getId());
@@ -87,6 +91,7 @@ public class ProjectServiceImpl implements ProjectService {
 			
 			response.setProjects(Arrays.asList(project));
 		} catch(Exception e) {
+			log.error("listAll", e);
 			response.setSuccess(false);
 			response.setErrorMessage(e.getClass() + ":" + e.getMessage());
 		}
@@ -94,12 +99,13 @@ public class ProjectServiceImpl implements ProjectService {
 	}
 
 	@Override
-	public ProjectResponse deleteTask(ProjectRequest request) {
+	public ProjectResponse delete(ProjectRequest request) {
 		ProjectResponse response = new ProjectResponse();
 		try {
 			au.com.sap.mcc.timeteam.model.Project jpaProject = projectDao.fetchById(request.getProject().getId());
 			projectDao.delete(jpaProject);
 		} catch(Exception e) {
+			log.error("delete", e);
 			response.setSuccess(false);
 			response.setErrorMessage(e.getClass() + ":" + e.getMessage());
 		}

@@ -25,7 +25,7 @@ public class ActivityServiceImpl implements ActivityService {
 	@Autowired
 	protected TaskDao taskDao;
 	
-	public ActivityResponse getActivity(String id) {
+	public ActivityResponse get(String id) {
 		ActivityResponse response = new ActivityResponse();
 		try {
 			au.com.sap.mcc.timeteam.model.Activity jpaActivity = activityDao.fetchById(id);
@@ -39,7 +39,7 @@ public class ActivityServiceImpl implements ActivityService {
 		return response;
 	}
 
-	public ActivityResponse listAll() {
+	public ActivityResponse list() {
 		ActivityResponse response = new ActivityResponse();
 		try {
 			List<au.com.sap.mcc.timeteam.model.Activity> jpaActivities =  activityDao.findAll();
@@ -56,7 +56,7 @@ public class ActivityServiceImpl implements ActivityService {
 		return response;
 	}
 
-	public ActivityResponse createActivity(ActivityRequest request) {
+	public ActivityResponse create(ActivityRequest request) {
 		ActivityResponse response = new ActivityResponse();
 		try {
 			au.com.sap.mcc.timeteam.model.Activity jpaActivity = new au.com.sap.mcc.timeteam.model.Activity();
@@ -81,7 +81,7 @@ public class ActivityServiceImpl implements ActivityService {
 	}
 	
 	@Override
-	public ActivityResponse updateActivity(ActivityRequest request) {
+	public ActivityResponse update(ActivityRequest request) {
 		ActivityResponse response = new ActivityResponse();
 		try {
 			au.com.sap.mcc.timeteam.model.Activity jpaActivity = activityDao.fetchById(request.getActivity().getId());
@@ -94,14 +94,14 @@ public class ActivityServiceImpl implements ActivityService {
 			
 			response.setActivities(Arrays.asList(activity));
 		} catch(Exception e) {
-			log.error("saveActivity", e);
+			log.error("updateActivity", e);
 			response.setSuccess(false);
 			response.setErrorMessage(e.getClass() + ":" + e.getMessage());
 		}
 		return response;
 	}
 
-	public ActivityResponse deleteActivity(ActivityRequest request) {
+	public ActivityResponse delete(ActivityRequest request) {
 		ActivityResponse response = new ActivityResponse();
 		try {
 			au.com.sap.mcc.timeteam.model.Activity jpaActivity = activityDao.fetchById(request.getActivity().getId());

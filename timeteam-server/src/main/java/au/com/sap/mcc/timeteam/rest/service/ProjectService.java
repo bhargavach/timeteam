@@ -18,21 +18,21 @@ public interface ProjectService {
 
 	@GET
 	@Path("/get/{projectId}/")
-	public ProjectResponse getProject(@PathParam(value = "projectId") String id);
+	public ProjectResponse get(@PathParam(value = "projectId") String id);
 	
 	@GET
 	@Path("/list")
-	public ProjectResponse listAll();
+	public ProjectResponse list();
 	
 	@POST
 	@Path("/create")
-	public ProjectResponse createTask(ProjectRequest request);
+	public ProjectResponse create(ProjectRequest request);
 	
 	@PUT
 	@Path("/update")
-	public ProjectResponse updateTask(ProjectRequest request);
+	public ProjectResponse update(ProjectRequest request);
 	
 	@DELETE
 	@Path("/delete")
-	public ProjectResponse deleteTask(ProjectRequest request);
+	public ProjectResponse delete(ProjectRequest request);
 }

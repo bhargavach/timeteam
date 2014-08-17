@@ -18,21 +18,21 @@ public interface ActivityService {
 
 	@GET
 	@Path("/get/{activityId}/")
-	public ActivityResponse getActivity(@PathParam(value = "activityId") String id);
+	public ActivityResponse get(@PathParam(value = "activityId") String id);
 	
 	@GET
 	@Path("/list")
-	public ActivityResponse listAll();
+	public ActivityResponse list();
 	
 	@POST
 	@Path("/create")
-	public ActivityResponse createActivity(ActivityRequest request);
+	public ActivityResponse create(ActivityRequest request);
 	
 	@PUT
 	@Path("/update")
-	public ActivityResponse updateActivity(ActivityRequest request);
+	public ActivityResponse update(ActivityRequest request);
 	
 	@DELETE
 	@Path("/delete")
-	public ActivityResponse deleteActivity(ActivityRequest request);
+	public ActivityResponse delete(ActivityRequest request);
 }

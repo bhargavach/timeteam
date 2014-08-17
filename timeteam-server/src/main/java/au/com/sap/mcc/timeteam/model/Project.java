@@ -3,7 +3,6 @@ package au.com.sap.mcc.timeteam.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -27,7 +26,7 @@ public class Project extends BaseEntity {
 	@Size(max = 3, message = "{model.project.shortname.size.error}")
 	protected String shortname;
 	
-	@OneToMany(mappedBy = "project", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "project", fetch = FetchType.EAGER)
 	protected List<Task> tasks = new ArrayList<Task>();
 	
 	/*@ManyToMany(mappedBy = "projects")
