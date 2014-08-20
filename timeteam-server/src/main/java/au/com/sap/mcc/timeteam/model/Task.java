@@ -77,10 +77,20 @@ public class Task extends BaseEntity implements Serializable {
 		}
 		return this.project.getShortname().concat("-" + String.valueOf(this.number));
 	}
+	
+	public int totalDuration() {
+		int total = 0;
+		
+		if(this.activities != null) {
+			for(Activity activity : activities) {
+				total += activity.getDuration();
+			}
+		}
+		
+		return total;
+	}
 
 	public String toString() {
 		return new ToStringBuilder(this).appendSuper(super.toString()).append("name", this.name).append("shortname", this.getShortName()).toString();
-	}
-	
-	
+	}	
 }

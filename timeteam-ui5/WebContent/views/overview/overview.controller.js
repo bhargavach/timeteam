@@ -34,5 +34,33 @@ sap.ui.controller("views.overview.overview", {
 //	onExit: function() {
 //
 //	}
+	
+	initModel: function(){
+		var oModel = new sap.ui.model.json.JSONModel();
+		oModel.loadData(" https://timeteami305363trial.hanatrial.ondemand.com/timeteam-1.0.0/services/rest/StatsService/timeAllocationByProject");
+		sap.ui.getCore().setModel(oModel);
+
+		var dataset = new sap.viz.ui5.data.FlattenedDataset({
+
+			dimensions : [ {
+				axis : 1,
+				name : 'Project',
+				value : "{name}"
+			} ],
+
+			measures : [ {
+				name : 'Total Time',
+				value : "{value}"
+			} ],
+
+			data : {
+				path : "/datasets",
+				factory : function() {
+				}
+			}
+		});
+		
+		return dataset;
+	}
 
 });

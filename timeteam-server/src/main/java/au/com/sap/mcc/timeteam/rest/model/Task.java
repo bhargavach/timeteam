@@ -13,6 +13,7 @@ public class Task {
 	protected String name;
 	protected String shortname;
 	protected String projectId;
+	protected int totalduration;
 	protected List<Activity> activities = new ArrayList<Activity>();
 
 	public String getId() {
@@ -70,6 +71,14 @@ public class Task {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public int getTotalduration() {
+		return totalduration;
+	}
+
+	public void setTotalduration(int totalduration) {
+		this.totalduration = totalduration;
+	}
 
 	@JsonIgnore
 	public static final Task convert(au.com.sap.mcc.timeteam.model.Task jpaTask) {
@@ -79,6 +88,7 @@ public class Task {
 		task.setNumber(jpaTask.getNumber());
 		task.setVersion(jpaTask.getVersion());
 		task.setName(jpaTask.getName());
+		task.setTotalduration(jpaTask.totalDuration());
 
 		if (jpaTask.getProject() != null) {
 			task.setProjectId(jpaTask.getProject().getId());

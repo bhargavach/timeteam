@@ -64,6 +64,18 @@ public class Project extends BaseEntity {
 		this.users = users;
 	}*/	
 	
+	public int totalDuration() {
+		int total = 0;
+		
+		if(this.tasks != null) {
+			for(Task task : tasks) {
+				total += task.totalDuration();
+			}
+		}
+		
+		return total;
+	}
+	
 	@Override
 	public String toString() {
 		return new ToStringBuilder(this).appendSuper(super.toString()).append("name", this.name).append("shortname", this.shortname).toString();
