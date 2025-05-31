@@ -36,7 +36,7 @@
 		<spring.version>4.0.6.RELEASE</spring.version>
 		<spring.data.version>1.6.1.RELEASE</spring.data.version>
 		<spring.dbunit.version>1.1.0</spring.dbunit.version>
-		<cxf.version>2.7.12</cxf.version>
+		<cxf.version>4.1.1</cxf.version>
 		<aspectj.version>1.8.1</aspectj.version>
 		
 		<!-- SAP HANA Cloud Platform SDK for Java EE 6 Web Profile = JEE6. Therefor JPA 2.0. DON'T USE 4.3.6.Final : 4.2.9.Final-->
