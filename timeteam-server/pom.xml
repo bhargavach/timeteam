@@ -34,7 +34,7 @@
 		<jdk.version>1.6</jdk.version>
 		<hcp.version>2.3.3</hcp.version>
 		<spring.version>6.2.7.RELEASE</spring.version>
-		<spring.data.version>1.6.1.RELEASE</spring.data.version>
+		<spring.data.version>3.4.5.RELEASE</spring.data.version>
 		<spring.dbunit.version>1.1.0</spring.dbunit.version>
 		<cxf.version>4.1.1</cxf.version>
 		<aspectj.version>1.8.1</aspectj.version>
