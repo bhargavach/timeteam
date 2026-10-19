@@ -1,6 +1,7 @@
 # SAP BTP — Simple Traffic Flow Diagrams
 
 > Minimal access flow diagrams for ADO Wiki. Each diagram is intentionally short — 5 to 7 nodes maximum.
+> Icons use Unicode emoji (universally supported in ADO Wiki Mermaid). See icon legend at the bottom of this page.
 
 ---
 
@@ -12,14 +13,14 @@ flowchart LR
     classDef system fill:#F5F5F5,color:#212121,stroke:#9E9E9E
     classDef scope  fill:#2E7D32,color:#fff,stroke:#1B5E20
 
-    GA_ADMIN(["Global Account Admin"])
-    LOGIN["Sign in via Entra ID"]
-    COCKPIT["BTP Cockpit"]
-    GLOBAL["Global Account\nASB Bank NZ"]
-    DIRS["Manage Directories"]
-    SUBS["Manage Subaccounts"]
-    ENTITLE["Manage Entitlements\n& Licencing"]
-    MEMBERS["Manage Global Members\n& Role Collections"]
+    GA_ADMIN(["👑 Global Account Admin"])
+    LOGIN["🔑 Sign in via Entra ID"]
+    COCKPIT["🖥️ BTP Cockpit"]
+    GLOBAL["🌐 Global Account\nASB Bank NZ"]
+    DIRS["📂 Manage Directories"]
+    SUBS["📁 Manage Subaccounts"]
+    ENTITLE["📋 Manage Entitlements\n& Licencing"]
+    MEMBERS["👥 Manage Global Members\n& Role Collections"]
 
     GA_ADMIN --> LOGIN --> COCKPIT --> GLOBAL
     GLOBAL --> DIRS
@@ -42,14 +43,14 @@ flowchart LR
     classDef system fill:#F5F5F5,color:#212121,stroke:#9E9E9E
     classDef scope  fill:#E65100,color:#fff,stroke:#BF360C
 
-    SA_ADMIN(["Subaccount Admin"])
-    LOGIN["Sign in via Entra ID"]
-    COCKPIT["BTP Cockpit"]
-    SA["Target Subaccount"]
-    SVCS["Services &\nSubscriptions"]
-    USERS["Users &\nRole Collections"]
-    DEST["Destinations"]
-    CONN["Connectivity\n& Cloud Connector"]
+    SA_ADMIN(["🔧 Subaccount Admin"])
+    LOGIN["🔑 Sign in via Entra ID"]
+    COCKPIT["🖥️ BTP Cockpit"]
+    SA["📁 Target Subaccount"]
+    SVCS["⚙️ Services &\nSubscriptions"]
+    USERS["👥 Users &\nRole Collections"]
+    DEST["🔗 Destinations"]
+    CONN["🔌 Connectivity\n& Cloud Connector"]
 
     SA_ADMIN --> LOGIN --> COCKPIT --> SA
     SA --> SVCS
@@ -73,12 +74,12 @@ flowchart LR
     classDef approve fill:#E65100,color:#fff,stroke:#BF360C
     classDef done    fill:#2E7D32,color:#fff,stroke:#1B5E20
 
-    USER(["User"])
-    REQ["Raise Access\nRequest"]
-    APPR["Manager\nApproval"]
-    GRANT["Elevated Access\nGranted via SailPoint"]
-    TARGET["Access Target\nService or Admin Area"]
-    REVOKE["Access Revoked\non Completion"]
+    USER(["👤 User"])
+    REQ["📝 Raise Access\nRequest"]
+    APPR["✅ Manager\nApproval"]
+    GRANT["🔓 Elevated Access\nGranted via SailPoint"]
+    TARGET["🎯 Access Target\nService or Admin Area"]
+    REVOKE["🔒 Access Revoked\non Completion"]
 
     USER --> REQ --> APPR --> GRANT --> TARGET --> REVOKE
 
@@ -98,11 +99,11 @@ flowchart LR
     classDef system fill:#F5F5F5,color:#212121,stroke:#9E9E9E
     classDef limit  fill:#546E7A,color:#fff,stroke:#37474F
 
-    END_USER(["End User"])
-    LOGIN["Sign in via Entra ID"]
-    COCKPIT["BTP Cockpit\n(Assigned Subaccounts Only)"]
-    ASSIGNED["Assigned Services\n& Applications"]
-    USE["Use Service"]
+    END_USER(["👤 End User"])
+    LOGIN["🔑 Sign in via Entra ID"]
+    COCKPIT["🖥️ BTP Cockpit\n(Assigned Subaccounts Only)"]
+    ASSIGNED["⚙️ Assigned Services\n& Applications"]
+    USE["▶️ Use Service"]
     NO_ADMIN["⛔ No Admin,\nConfig or Setup Access"]
 
     END_USER --> LOGIN --> COCKPIT --> ASSIGNED --> USE
@@ -124,12 +125,12 @@ flowchart LR
     classDef step   fill:#F5F5F5,color:#212121,stroke:#9E9E9E
     classDef done   fill:#2E7D32,color:#fff,stroke:#1B5E20
 
-    ADMIN(["Subaccount Admin"])
-    SA["Open Subaccount\nin BTP Cockpit"]
-    NAV["Connectivity\n→ Destinations"]
-    NEW["+ New Destination"]
-    FILL["Enter Name · URL\nProxy Type · Auth Type"]
-    TEST["Test Connection"]
+    ADMIN(["🔧 Subaccount Admin"])
+    SA["🖥️ Open Subaccount\nin BTP Cockpit"]
+    NAV["🔗 Connectivity\n→ Destinations"]
+    NEW["➕ New Destination"]
+    FILL["📝 Enter Name · URL\nProxy Type · Auth Type"]
+    TEST["🧪 Test Connection"]
     OK(["✅ Destination Ready"])
 
     ADMIN --> SA --> NAV --> NEW --> FILL --> TEST --> OK
@@ -153,15 +154,15 @@ flowchart TD
     classDef std   fill:#2E7D32,color:#fff,stroke:#1B5E20
     classDef block fill:#B71C1C,color:#fff,stroke:#7F0000,font-style:italic
 
-    GA(["Global Account Admin"])
-    SA_A(["Subaccount Admin"])
-    ELEV(["Elevated User"])
-    STD(["Standard End User"])
+    GA(["👑 Global Account Admin"])
+    SA_A(["🔧 Subaccount Admin"])
+    ELEV(["🔓 Elevated User"])
+    STD(["👤 Standard End User"])
 
-    GA_SVC["Global Account\nDirectories · Subaccounts\nEntitlements · Members"]
-    SA_SVC["Subaccount Only\nServices · Users\nDestinations · Connectivity"]
-    ELEV_SVC["Specific Service or Area\nTime-Limited\nApproval Required"]
-    STD_SVC["Assigned Services\nRead & Use Only"]
+    GA_SVC["🌐 Global Account\n📂 Directories · 📁 Subaccounts\n📋 Entitlements · 👥 Members"]
+    SA_SVC["📁 Subaccount Only\n⚙️ Services · 👥 Users\n🔗 Destinations · 🔌 Connectivity"]
+    ELEV_SVC["🎯 Specific Service or Area\n⏱️ Time-Limited\n✅ Approval Required"]
+    STD_SVC["⚙️ Assigned Services\n👁️ Read & Use Only"]
     BLOCKED["⛔ Platform Config\nAdmin Functions\nNot Accessible"]
 
     GA --> GA_SVC
@@ -178,3 +179,32 @@ flowchart TD
 ```
 
 ---
+
+## Icon Legend
+
+| Icon | Represents in Diagrams |
+|---|---|
+| 👑 | Global Account Administrator |
+| 🔧 | Subaccount Administrator |
+| 👤 | Standard User / End User |
+| 🔓 | Elevated / Temporary Access Granted |
+| 🔒 | Access Revoked |
+| 🔑 | Authentication — Entra ID / IAS Sign-in |
+| 🖥️ | BTP Cockpit |
+| 🌐 | Global Account |
+| 📂 | BTP Directory |
+| 📁 | BTP Subaccount |
+| ⚙️ | Services & Subscriptions |
+| 👥 | Users, Members & Role Collections |
+| 🔗 | Destination Service |
+| 🔌 | Connectivity & Cloud Connector |
+| 📋 | Entitlements & Licensing |
+| 📝 | Form / Data Entry Step |
+| ➕ | Create New |
+| 🧪 | Test / Validate Connection |
+| ✅ | Approved / Success |
+| ⛔ | Not Accessible / Blocked |
+| 🎯 | Targeted / Scoped Access |
+| ⏱️ | Time-Limited Access |
+| 👁️ | Read-Only |
+| ▶️ | Use / Run Service |
