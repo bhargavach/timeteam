@@ -211,7 +211,8 @@ flowchart TD
 
 ---
 
-:::mermaid
+```mermaid
+
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "fontSize": "14px"}}}%%
 flowchart TB
 
@@ -309,5 +310,4 @@ flowchart TB
     class SA_P,SA_L saNode
     class EU_P,EU_L euNode
     class SU_P,SU_L suNode
-
-:::
+```
